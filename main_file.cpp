@@ -34,15 +34,15 @@ Place, Fifth Floor, Boston, MA  02110 - 1301  USA
 #include "constants.h"
 #include "lodepng.h"
 #include "shaderprogram.h"
-#include "myCube.h"
-#include "myTeapot.h"
-#include "szachownica.h"
-#include "king.h"
-#include "queen.h"
-#include "rook.h"
-#include "bishop.h"
-#include "knight.h"
-#include "pawn.h"
+#include "objects/myCube.h"
+#include "objects/myTeapot.h"
+#include "objects/szachownica.h"
+#include "objects/king.h"
+#include "objects/queen.h"
+#include "objects/rook.h"
+#include "objects/bishop.h"
+#include "objects/knight.h"
+#include "objects/pawn.h"
 
 float speed_x=0;
 float speed_y=0;
@@ -329,7 +329,7 @@ void initBoard()
 
 void readFile()
 {
-    file.open("example2.pgn");
+    file.open("PGN/example2.pgn");
 
     std::string input = "";
     std::string newmove;
@@ -682,9 +682,9 @@ void initOpenGLProgram(GLFWwindow* window) {
     glfwSetScrollCallback(window, scrollCallback);
 
 	sp=new ShaderProgram("v_simplest.glsl",NULL,"f_simplest.glsl");
-	tex0 = readTexture("boardtexture1.png");
-	tex1 = readTexture("white.png");
-	tex2 = readTexture("black1.png");
+	tex0 = readTexture("Textures/boardtexture1.png");
+	tex1 = readTexture("Textures/white.png");
+	tex2 = readTexture("Textures/black1.png");
 }
 
 
